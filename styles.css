@@ -13,10 +13,7 @@ body {
   width: 100%;
   position: relative;
 
-  background-image: url("asset1/joinlist.png");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background: url("asset1/joinlist.png") center top / contain no-repeat;
 }
 
 
