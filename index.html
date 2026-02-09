@@ -1,40 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yaldah Issa — Inner Circle</title>
-    <meta name="description" content="Join the Yaldah Issa Inner Circle for early access, private sales, and limited releases." />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
-    <main class="page" role="main">
-      <form
-        class="overlayForm"
-        id="innerCircleForm"
-        action="https://formspree.io/f/mvzbgkbd"
-        method="POST"
+  <title>Yaldah Issa — Inner Circle</title>
+
+  <meta name="description" content="Join the Yaldah Issa Inner Circle for early access, private sales, and exclusive releases.">
+
+  <!-- Connect CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Full background section -->
+  <main class="page">
+
+    <!-- Email signup form -->
+    <form
+      class="form"
+      action="https://formspree.io/f/mvzbgkbd"
+      method="POST"
+    >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
       >
-        <label class="srOnly" for="email">Email address</label>
 
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Enter your email"
-          autocomplete="email"
-          required
-        />
+      <button type="submit">
+        JOIN NOW
+      </button>
 
-        <input type="hidden" name="source" value="Inner Circle Landing Page" />
+    </form>
 
-        <button type="submit" id="submitBtn">JOIN NOW*</button>
+  </main>
 
-        <p class="status" id="status" aria-live="polite"></p>
-      </form>
-    </main>
-
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
