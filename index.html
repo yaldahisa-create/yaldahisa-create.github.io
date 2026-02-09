@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yaldah Issa — Inner Circle</title>
+    <meta name="description" content="Join the Yaldah Issa Inner Circle for early access, private sales, and limited releases." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main class="page" role="main">
+      <form
+        class="overlayForm"
+        id="innerCircleForm"
+        action="PASTE_YOUR_FORMSPREE_LINK_HERE"
+        method="POST"
+      >
+        <label class="srOnly" for="email">Email address</label>
+
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        />
+
+        <input type="hidden" name="source" value="Inner Circle Landing Page" />
+
+        <button type="submit" id="submitBtn">JOIN NOW*</button>
+
+        <p class="status" id="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
