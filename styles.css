@@ -1,0 +1,93 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #efe6dd;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.page{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: url("assets/joinlist.png") center top / cover no-repeat;
+}
+
+.srOnly{
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.overlayForm{
+  position: absolute;
+  left: 17%;
+  top: 56.2%;
+  width: 66%;
+
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  border: 1px solid rgba(176,138,90,0.55);
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(1px);
+}
+
+.overlayForm input{
+  border: 0;
+  outline: none;
+  padding: 14px 14px;
+  font-size: 18px;
+  background: rgba(255,255,255,0.18);
+  color: rgba(60,52,44,0.9);
+}
+
+.overlayForm input::placeholder{
+  color: rgba(60,52,44,0.45);
+}
+
+.overlayForm button{
+  border: 0;
+  cursor: pointer;
+  padding: 14px 10px;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #b08a5a, #8d6b45);
+}
+
+.overlayForm button:active{
+  transform: translateY(1px);
+}
+
+.overlayForm button:disabled{
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.status{
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 6px;
+  font-size: 14px;
+  color: rgba(60,52,44,0.75);
+  text-align: center;
+  min-height: 18px;
+}
+
+@media (max-width: 520px){
+  .overlayForm{
+    left: 10%;
+    top: 56.8%;
+    width: 80%;
+    grid-template-columns: 1fr;
+  }
+  .overlayForm button{
+    width: 100%;
+  }
+}
