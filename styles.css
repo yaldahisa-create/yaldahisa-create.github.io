@@ -1,95 +1,70 @@
+/* Reset */
 html, body {
-  height: 100%;
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-body {
-  background: #efe6dd;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-
-.page{
+/* Main background */
+.page {
   min-height: 100vh;
   width: 100%;
   position: relative;
 
-  background: url("asset1/joinlist.png") center top / contain no-repeat;
+  /* Your join list image */
+  background-image: url("asset1/joinlist.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
 }
 
-
-.srOnly{
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-}
-
-.overlayForm{
+/* Email form */
+.form {
   position: absolute;
+
+  /* Adjust if needed */
   left: 17%;
-  top: 56.2%;
+  top: 56%;
   width: 66%;
 
-  display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  border: 1px solid rgba(176,138,90,0.55);
-  background: rgba(255,255,255,0.10);
-  backdrop-filter: blur(1px);
+  display: flex;
+  border: 1px solid #b08a5a;
+  background: rgba(255,255,255,0.15);
 }
 
-.overlayForm input{
-  border: 0;
+/* Email input */
+.form input {
+  flex: 1;
+  padding: 14px;
+  border: none;
   outline: none;
-  padding: 14px 14px;
   font-size: 18px;
-  background: rgba(255,255,255,0.18);
-  color: rgba(60,52,44,0.9);
+  background: transparent;
+  color: #5a5147;
 }
 
-.overlayForm input::placeholder{
-  color: rgba(60,52,44,0.45);
-}
-
-.overlayForm button{
-  border: 0;
+/* Button */
+.form button {
+  padding: 14px 20px;
+  border: none;
+  background: linear-gradient(#b08a5a, #8d6b45);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
   cursor: pointer;
-  padding: 14px 10px;
-  font-size: 15px;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(180deg, #b08a5a, #8d6b45);
 }
 
-.overlayForm button:active{
-  transform: translateY(1px);
-}
-
-.overlayForm button:disabled{
-  opacity: 0.75;
-  cursor: not-allowed;
-}
-
-.status{
-  grid-column: 1 / -1;
-  margin: 0;
-  padding: 10px 6px;
-  font-size: 14px;
-  color: rgba(60,52,44,0.75);
-  text-align: center;
-  min-height: 18px;
-}
-
-@media (max-width: 520px){
-  .overlayForm{
+/* Mobile */
+@media (max-width: 600px) {
+  .form {
     left: 10%;
-    top: 56.8%;
     width: 80%;
-    grid-template-columns: 1fr;
+    top: 60%;
+    flex-direction: column;
   }
-  .overlayForm button{
+
+  .form button {
     width: 100%;
   }
 }
+
