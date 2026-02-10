@@ -1,62 +1,152 @@
-*{ box-sizing:border-box; }
-html,body{ margin:0; height:100%; }
-
-.poster{
-  min-height:100vh;
-  width:100%;
-  position:relative;
-
-  /* ONE SINGLE IMAGE */
-  background: url("/asset1/hero.png") center top / contain no-repeat;
-  background-color:#efe4d8;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Invisible label */
-.srOnly{
-  position:absolute;
-  left:-10000px;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+html, body {
+  height: 100%;
+  font-family: "Cormorant Garamond", serif;
 }
 
-/* Put this over the email box area on your poster image */
-.overlayForm{
-  position:absolute;
-  left:17%;
-  top:56%;
-  width:66%;
-  display:grid;
-  grid-template-columns: 1.4fr .6fr;
-  border:1px solid rgba(176,138,90,.55);
-  background:rgba(255,255,255,.12);
+/* Full screen background */
+body {
+  min-height: 100vh;
+
+  background-image: url("A_promotional_digital_digital_graphic_for_the_Yald.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.overlayForm input{
-  border:0;
-  outline:none;
-  padding:14px 14px;
-  font-size:18px;
-  background:rgba(255,255,255,.12);
+/* Dark soft overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: -1;
 }
 
-.overlayForm button{
-  border:0;
-  cursor:pointer;
-  padding:14px 10px;
-  font-weight:700;
-  letter-spacing:.12em;
-  color:#fff;
-  background:linear-gradient(180deg,#b08a5a,#8d6b45);
+/* Center content */
+.container {
+  width: 100%;
+  max-width: 520px;
+  padding: 24px;
 }
 
-@media (max-width:600px){
-  .overlayForm{
-    left:10%;
-    width:80%;
-    top:58%;
-    grid-template-columns:1fr;
+/* Glass card */
+.card {
+  background: rgba(255,255,255,0.88);
+  padding: 42px 28px;
+  text-align: center;
+
+  border-radius: 14px;
+  border: 1px solid rgba(176,138,90,0.3);
+
+  box-shadow: 0 25px 70px rgba(0,0,0,0.15);
+  backdrop-filter: blur(4px);
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  margin-bottom: 12px;
+}
+
+/* Brand */
+.brand {
+  font-size: 42px;
+  letter-spacing: 0.15em;
+  color: #8d6b45;
+  margin-bottom: 6px;
+}
+
+.tagline {
+  font-size: 22px;
+  letter-spacing: 0.2em;
+  color: #b08a5a;
+  margin-bottom: 18px;
+}
+
+/* Text */
+.text {
+  font-size: 19px;
+  color: #4f463c;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.text.soft {
+  color: rgba(79,70,60,0.75);
+}
+
+/* Form */
+.form {
+  display: flex;
+  margin: 24px 0 14px;
+  border: 1px solid #b08a5a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.form input {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  font-size: 17px;
+  outline: none;
+}
+
+.form button {
+  background: linear-gradient(
+    180deg,
+    #c59b63,
+    #8d6b45
+  );
+
+  color: white;
+  border: none;
+  padding: 14px 18px;
+
+  font-weight: 600;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.form button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Note */
+.note {
+  font-size: 16px;
+  color: rgba(79,70,60,0.7);
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+
+  .brand {
+    font-size: 34px;
   }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .form button {
+    width: 100%;
+  }
+
 }
+
 
 
