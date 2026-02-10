@@ -1,255 +1,62 @@
-/* =========================
-   RESET
-========================= */
-*{
-  box-sizing: border-box;
+*{ box-sizing: border-box; }
+html,body{ margin:0; height:100%; }
+
+.poster{
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+
+  /* MAIN POSTER IMAGE (change this line if needed) */
+  background: url("/asset1/hero.png") center top / contain no-repeat;
+
+
+  /* prevents white bars around it on some screens */
+  background-color: #efe4d8;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-html,body{
+/* Bottom image attaches like part of the same poster */
+.hero{
+  width: 100%;
+  display: block;
   margin: 0;
   padding: 0;
-  height: 100%;
+  line-height: 0;
 }
 
-
-/* =========================
-   COLORS
-========================= */
-:root{
-  --bg1:#f3ece4;
-  --bg2:#efe4d8;
-  --ink:#5a5147;
-  --inkSoft: rgba(90,81,71,.75);
-  --gold:#b08a5a;
-  --goldDark:#8d6b45;
-  --stroke: rgba(176,138,90,.35);
-  --card: rgba(255,255,255,.55);
-}
-
-
-/* =========================
-   BODY
-========================= */
-body{
-  font-family: "EB Garamond", serif;
-  color: var(--ink);
-
-  background:
-    radial-gradient(900px 500px at 20% 10%, rgba(176,138,90,.12), transparent 60%),
-    radial-gradient(700px 420px at 85% 30%, rgba(255,255,255,.35), transparent 60%),
-    linear-gradient(180deg, var(--bg1), var(--bg2));
-}
-
-
-/* =========================
-   WRAPPER
-========================= */
-.wrap{
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 50px 16px;
-}
-
-
-/* =========================
-   CARD
-========================= */
-.card{
-  width: min(920px, 100%);
-  text-align: center;
-
-  padding: clamp(26px, 4vw, 42px)
-           clamp(20px, 3.5vw, 36px);
-
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,.4);
-
-  box-shadow: 0 18px 55px rgba(0,0,0,.1);
-  backdrop-filter: blur(3px);
-}
-
-
-/* =========================
-   BRAND
-========================= */
-.brand{
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
-  letter-spacing: .18em;
-
-  color: var(--goldDark);
-  font-size: clamp(28px, 4.2vw, 54px);
-
-  margin-bottom: 14px;
-}
-
-
-/* =========================
-   DIVIDER
-========================= */
-.divider{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 12px;
-  margin: 8px 0 16px;
-}
-
-.line{
-  width: 86px;
-  height: 1px;
-  background: rgba(176,138,90,.45);
-}
-
-.mini{
-  font-family: "Cormorant Garamond", serif;
-  letter-spacing: .24em;
-
-  color: rgba(141,107,69,.85);
-  font-size: 15px;
-}
-
-
-/* =========================
-   TITLE
-========================= */
-.title{
-  margin: 0 0 14px;
-
-  font-family: "Cormorant Garamond", serif;
-  letter-spacing: .14em;
-  font-weight: 600;
-
-  color: var(--goldDark);
-
-  font-size: clamp(36px, 5vw, 64px);
-  line-height: 1.05;
-}
-
-
-/* =========================
-   COPY
-========================= */
-.copy{
-  margin: 0 auto 14px;
-
-  color: var(--inkSoft);
-  font-size: 20px;
-  line-height: 1.55;
-
-  max-width: 60ch;
-}
-
-
-/* =========================
-   FORM
-========================= */
-.form{
-  margin: 26px auto 14px;
-
-  width: min(560px, 100%);
+/* Invisible-but-real form overlay (positioned over your “email box”) */
+.overlayForm{
+  position: absolute;
+  left: 17%;
+  top: 56%;
+  width: 66%;
   display: grid;
   grid-template-columns: 1.4fr .6fr;
-
-  border: 1px solid var(--stroke);
-  background: rgba(255,255,255,.35);
+  border: 1px solid rgba(176,138,90,.55);
+  background: rgba(255,255,255,.12);
 }
 
-.form input{
-  border: none;
+.overlayForm input{
+  border: 0;
   outline: none;
-
-  padding: 15px 16px;
-
-  font: inherit;
+  padding: 14px 14px;
   font-size: 18px;
-
-  background: transparent;
-  color: var(--ink);
+  background: rgba(255,255,255,.12);
 }
 
-.form input::placeholder{
-  color: rgba(90,81,71,.55);
-}
-
-.form button{
-  border: none;
+.overlayForm button{
+  border: 0;
   cursor: pointer;
-
-  padding: 15px 16px;
-
-  font-family: "Cormorant Garamond", serif;
-  letter-spacing: .16em;
+  padding: 14px 10px;
   font-weight: 700;
-
+  letter-spacing: .12em;
   color: #fff;
-
-  background: linear-gradient(180deg, var(--gold), var(--goldDark));
-
-  transition: opacity .2s ease;
+  background: linear-gradient(180deg, #b08a5a, #8d6b45);
 }
 
-.form button:hover{
-  opacity: .9;
-}
-
-
-/* =========================
-   NOTE
-========================= */
-.note{
-  margin-top: 14px;
-
-  color: rgba(90,81,71,.7);
-  font-size: 19px;
-}
-
-
-/* =========================
-   ORNAMENT
-========================= */
-.orn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.ornLine{
-  width: 140px;
-  height: 1px;
-  background: rgba(176,138,90,.45);
-}
-
-.diamond{
-  width: 9px;
-  height: 9px;
-
-  border: 1px solid rgba(176,138,90,.7);
-  transform: rotate(45deg);
-
-  background: rgba(176,138,90,.08);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-.foot{
-  margin-top: 20px;
-
-  color: rgba(90,81,71,.6);
-  font-size: 16px;
-}
-
-
-/* =========================
-   ACCESSIBILITY
-========================= */
 .srOnly{
   position:absolute;
   left:-10000px;
@@ -258,44 +65,15 @@ body{
   overflow:hidden;
 }
 
-
-/* =========================
-   BOTTOM IMAGE
-========================= */
-.bottom{
-  width: 100%;
-  background: #fff;
-  padding-top: 40px;
-}
-
-.bottom img{
-  width: 100%;
-  max-height: 650px;
-
-  object-fit: cover;
-  display: block;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
 @media (max-width: 600px){
-
-  .form{
+  .overlayForm{
+    left: 10%;
+    width: 80%;
+    top: 58%;
     grid-template-columns: 1fr;
   }
-
-  .form button{
+  .overlayForm button{
     width: 100%;
-  }
-
-  .line{
-    width: 54px;
-  }
-
-  .copy{
-    font-size: 18px;
   }
 }
 
