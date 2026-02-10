@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yaldah Issa — Inner Circle</title>
-    <meta name="description" content="Join the Yaldah Issa Inner Circle for early access, private sales, and limited releases." />
+
+    <!-- Fonts used in your CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -24,14 +26,20 @@
 
         <h1 class="title">YALDAH ISSA<br/>INNER CIRCLE</h1>
 
-        <p class="copy">Be the first to access exclusive collections,<br/>private sales, and limited releases.</p>
-        <p class="copy">Join our community of women who lead<br/>with purpose and grace.</p>
+        <p class="copy">
+          Be the first to access exclusive collections,<br />
+          private sales, and limited releases.
+        </p>
+
+        <p class="copy">
+          Join our community of women who lead<br />
+          with purpose and grace.
+        </p>
 
         <form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
           <label class="srOnly" for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+          <input id="email" name="email" type="email" placeholder="Enter your email" required />
           <button type="submit">JOIN NOW*</button>
-          <input type="hidden" name="source" value="Inner Circle Landing Page" />
         </form>
 
         <p class="note">Members receive early access and special pricing.</p>
@@ -41,13 +49,13 @@
           <span class="diamond"></span>
           <span class="ornLine"></span>
         </div>
-      </section>
 
-      <footer class="foot">© <span id="y"></span> Yaldah Issa • Purpose & Style</footer>
+        <p class="foot">© <span id="year"></span> Yaldah Issa. All rights reserved.</p>
+      </section>
     </main>
 
     <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
