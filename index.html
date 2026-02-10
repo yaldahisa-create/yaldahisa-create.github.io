@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Yaldah Issa — Inner Circle</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- cache-bust so you SEE the changes -->
+  <link rel="stylesheet" href="./styles.css?v=3" />
 </head>
 
 <body>
 
-  <!-- MAIN JOIN LIST CARD -->
   <main class="wrap">
     <section class="card">
 
@@ -30,66 +28,39 @@
 
       <h1 class="title">INNER<br> CIRCLE</h1>
 
-      <p class="copy">
-        Be the first to access exclusive collections,
-        private sales, and limited releases.
-      </p>
+      <p class="copy">Be the first to access exclusive collections, private sales, and limited releases.</p>
+      <p class="copy">Join a community of women who lead with purpose and grace.</p>
 
-      <p class="copy">
-        Join a community of women who lead
-        with purpose and grace.
-      </p>
-
-      <!-- FORM -->
-      <form
-        class="form"
-        action="https://formspree.io/f/mvzbgkbd"
-        method="POST"
-      >
+      <form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
         <label class="srOnly" for="email">Email</label>
-
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Enter your email"
-          required
-        />
-
+        <input id="email" name="email" type="email" placeholder="Enter your email" required />
         <button type="submit">JOIN NOW*</button>
       </form>
 
-      <p class="note">
-        Members receive early access and private invitations.
-      </p>
+      <p class="note">Members receive early access and private invitations.</p>
 
-      <div class="orn">
+      <div class="orn" aria-hidden="true">
         <span class="ornLine"></span>
         <span class="diamond"></span>
         <span class="ornLine"></span>
       </div>
 
-      <p class="foot">
-        © <span id="year"></span> Yaldah Issa. All rights reserved.
-      </p>
+      <p class="foot">© <span id="year"></span> Yaldah Issa. All rights reserved.</p>
 
     </section>
   </main>
 
-
-  <!-- BOTTOM IMAGE -->
   <section class="bottom">
     <img src="/asset1/hero.png" alt="Yaldah Issa Collection">
   </section>
 
-
   <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
+
 
 
 
