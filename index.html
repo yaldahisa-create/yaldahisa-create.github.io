@@ -1,43 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yaldah Issa — Inner Circle</title>
+    <meta name="description" content="Join the Yaldah Issa Inner Circle for early access, private sales, and limited releases." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-  <title>Yaldah Issa — Inner Circle</title>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <div class="brand">YALDAH ISSA</div>
 
-  <meta name="description" content="Join the Yaldah Issa Inner Circle for early access, private sales, and exclusive releases.">
+        <div class="divider">
+          <span class="line"></span>
+          <span class="mini">JOIN THE</span>
+          <span class="line"></span>
+        </div>
 
-  <!-- Connect CSS -->
-  <link rel="stylesheet" href="styles.css">
-</head>
+        <h1 class="title">YALDAH ISSA<br/>INNER CIRCLE</h1>
 
-<body>
+        <p class="copy">Be the first to access exclusive collections,<br/>private sales, and limited releases.</p>
+        <p class="copy">Join our community of women who lead<br/>with purpose and grace.</p>
 
-  <!-- Full background section -->
-  <main class="page">
+        <form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
+          <label class="srOnly" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required autocomplete="email" />
+          <button type="submit">JOIN NOW*</button>
+          <input type="hidden" name="source" value="Inner Circle Landing Page" />
+        </form>
 
-    <!-- Email signup form -->
-    <form
-      class="form"
-      action="https://formspree.io/f/mvzbgkbd"
-      method="POST"
-    >
+        <p class="note">Members receive early access and special pricing.</p>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        required
-      >
+        <div class="orn" aria-hidden="true">
+          <span class="ornLine"></span>
+          <span class="diamond"></span>
+          <span class="ornLine"></span>
+        </div>
+      </section>
 
-      <button type="submit">
-        JOIN NOW
-      </button>
+      <footer class="foot">© <span id="y"></span> Yaldah Issa • Purpose & Style</footer>
+    </main>
 
-    </form>
-
-  </main>
-
-</body>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
+
