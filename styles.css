@@ -1,70 +1,172 @@
-/* Reset */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+:root{
+  --bg1:#f3ece4;
+  --bg2:#efe4d8;
+  --ink:#5a5147;
+  --inkSoft: rgba(90,81,71,.78);
+  --gold:#b08a5a;
+  --goldDark:#8d6b45;
+  --stroke: rgba(176,138,90,.35);
+  --card: rgba(255,255,255,.55);
 }
 
-/* Main background */
-.page {
+*{ box-sizing: border-box; }
+html,body{ height:100%; margin:0; }
+
+body{
+  font-family: "EB Garamond", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(176,138,90,.12), transparent 60%),
+    radial-gradient(700px 420px at 85% 30%, rgba(255,255,255,.35), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+}
+
+.wrap{
   min-height: 100vh;
-  width: 100%;
-  position: relative;
-
-  /* Your join list image */
-  background-image: url("asset1/joinlist.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
+  display: grid;
+  place-items: center;
+  padding: 42px 16px;
 }
 
-/* Email form */
-.form {
-  position: absolute;
-
-  /* Adjust if needed */
-  left: 17%;
-  top: 56%;
-  width: 66%;
-
-  display: flex;
-  border: 1px solid #b08a5a;
-  background: rgba(255,255,255,0.15);
+.card{
+  width: min(920px, 100%);
+  text-align: center;
+  padding: clamp(22px, 4vw, 38px) clamp(16px, 3.5vw, 34px);
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 18px 55px rgba(0,0,0,.08);
+  backdrop-filter: blur(2px);
 }
 
-/* Email input */
-.form input {
-  flex: 1;
-  padding: 14px;
-  border: none;
+.brand{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  letter-spacing: .16em;
+  color: var(--goldDark);
+  font-size: clamp(28px, 4.2vw, 54px);
+  margin-bottom: 14px;
+}
+
+.divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 12px;
+  margin: 6px 0 14px;
+}
+
+.line{
+  width: 86px;
+  height: 1px;
+  background: rgba(176,138,90,.45);
+}
+
+.mini{
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: .24em;
+  color: rgba(141,107,69,.85);
+  font-size: 15px;
+}
+
+.title{
+  margin: 0 0 12px;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: .12em;
+  font-weight: 600;
+  color: var(--goldDark);
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.05;
+}
+
+.copy{
+  margin: 0 auto 12px;
+  color: var(--inkSoft);
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+.form{
+  margin: 22px auto 12px;
+  width: min(560px, 100%);
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.30);
+}
+
+.form input{
+  border: 0;
   outline: none;
+  padding: 14px 16px;
+  font: inherit;
   font-size: 18px;
   background: transparent;
-  color: #5a5147;
+  color: var(--ink);
 }
 
-/* Button */
-.form button {
-  padding: 14px 20px;
-  border: none;
-  background: linear-gradient(#b08a5a, #8d6b45);
-  color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
+.form input::placeholder{
+  color: rgba(90,81,71,.55);
+}
+
+.form button{
+  border: 0;
   cursor: pointer;
+  padding: 14px 14px;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: .14em;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, var(--gold), var(--goldDark));
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .form {
-    left: 10%;
-    width: 80%;
-    top: 60%;
-    flex-direction: column;
-  }
-
-  .form button {
-    width: 100%;
-  }
+.note{
+  margin: 12px 0 0;
+  color: rgba(90,81,71,.70);
+  font-size: 19px;
 }
+
+.orn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ornLine{
+  width: 140px;
+  height: 1px;
+  background: rgba(176,138,90,.45);
+}
+
+.diamond{
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(176,138,90,.7);
+  transform: rotate(45deg);
+  background: rgba(176,138,90,.08);
+}
+
+.foot{
+  margin-top: 18px;
+  color: rgba(90,81,71,.60);
+  font-size: 16px;
+}
+
+.srOnly{
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+@media (max-width: 560px){
+  .form{ grid-template-columns: 1fr; }
+  .form button{ width: 100%; }
+  .line{ width: 54px; }
+}
+
 
