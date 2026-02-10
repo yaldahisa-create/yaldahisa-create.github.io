@@ -1,62 +1,17 @@
-*{ box-sizing: border-box; }
+*{ box-sizing:border-box; }
 html,body{ margin:0; height:100%; }
 
 .poster{
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
+  min-height:100vh;
+  width:100%;
+  position:relative;
 
-  /* MAIN POSTER IMAGE (change this line if needed) */
+  /* ONE SINGLE IMAGE */
   background: url("/asset1/hero.png") center top / contain no-repeat;
-
-
-  /* prevents white bars around it on some screens */
-  background-color: #efe4d8;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  background-color:#efe4d8;
 }
 
-/* Bottom image attaches like part of the same poster */
-.hero{
-  width: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-}
-
-/* Invisible-but-real form overlay (positioned over your “email box”) */
-.overlayForm{
-  position: absolute;
-  left: 17%;
-  top: 56%;
-  width: 66%;
-  display: grid;
-  grid-template-columns: 1.4fr .6fr;
-  border: 1px solid rgba(176,138,90,.55);
-  background: rgba(255,255,255,.12);
-}
-
-.overlayForm input{
-  border: 0;
-  outline: none;
-  padding: 14px 14px;
-  font-size: 18px;
-  background: rgba(255,255,255,.12);
-}
-
-.overlayForm button{
-  border: 0;
-  cursor: pointer;
-  padding: 14px 10px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  color: #fff;
-  background: linear-gradient(180deg, #b08a5a, #8d6b45);
-}
-
+/* Invisible label */
 .srOnly{
   position:absolute;
   left:-10000px;
@@ -65,15 +20,42 @@ html,body{ margin:0; height:100%; }
   overflow:hidden;
 }
 
-@media (max-width: 600px){
+/* Put this over the email box area on your poster image */
+.overlayForm{
+  position:absolute;
+  left:17%;
+  top:56%;
+  width:66%;
+  display:grid;
+  grid-template-columns: 1.4fr .6fr;
+  border:1px solid rgba(176,138,90,.55);
+  background:rgba(255,255,255,.12);
+}
+
+.overlayForm input{
+  border:0;
+  outline:none;
+  padding:14px 14px;
+  font-size:18px;
+  background:rgba(255,255,255,.12);
+}
+
+.overlayForm button{
+  border:0;
+  cursor:pointer;
+  padding:14px 10px;
+  font-weight:700;
+  letter-spacing:.12em;
+  color:#fff;
+  background:linear-gradient(180deg,#b08a5a,#8d6b45);
+}
+
+@media (max-width:600px){
   .overlayForm{
-    left: 10%;
-    width: 80%;
-    top: 58%;
-    grid-template-columns: 1fr;
-  }
-  .overlayForm button{
-    width: 100%;
+    left:10%;
+    width:80%;
+    top:58%;
+    grid-template-columns:1fr;
   }
 }
 
