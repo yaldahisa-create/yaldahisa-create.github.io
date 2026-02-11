@@ -1,253 +1,216 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Yaldah Issa | Inner Circle</title>
+<title>Yaldah Issa | Inner Circle</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    :root{
-      --gold:#b08a5a;
-      --gold-dark:#8d6b45;
-      --ink:#2f261f;
-      --soft:#6f655b;
-      --bg1:#f7f1ea;
-      --bg2:#eadfce;
-    }
+:root{
+  --gold:#b08a5a;
+  --gold-dark:#8d6b45;
+  --ink:#2f261f;
+  --soft:#6f655b;
+  --bg1:#f7f1ea;
+  --bg2:#eadfce;
+}
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+*{box-sizing:border-box;margin:0;padding:0;}
 
-    html,body{
-      height:100%;
-      font-family:"EB Garamond", serif;
-      color:var(--ink);
-    }
+body{
+  min-height:100vh;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  font-family:"EB Garamond",serif;
+  color:var(--ink);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+}
 
-    body{
-      background: linear-gradient(180deg,var(--bg1),var(--bg2));
-      overflow-x:hidden;
-    }
+.main{
+  max-width:850px;
+  width:100%;
+}
 
-    /* TOP SECTION */
-    .top{
-      min-height:68vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:45px 20px;
-      text-align:center;
-    }
+/* Logo */
+.logo{
+  width:120px;
+  margin-bottom:20px;
+}
 
-    .content{
-      width:100%;
-      max-width:900px;
-    }
+/* Brand */
+.brand{
+  font-family:"Cormorant Garamond",serif;
+  font-size:48px;
+  letter-spacing:.22em;
+  color:var(--gold-dark);
+}
 
-    /* LOGO */
-    .logo{
-      width:120px;
-      margin-bottom:18px;
-    }
+.tagline{
+  font-size:16px;
+  letter-spacing:.35em;
+  color:var(--gold);
+  margin:18px 0 28px;
+}
 
-    /* BRAND */
-    .brand{
-      font-family:"Cormorant Garamond", serif;
-      font-size:46px;
-      letter-spacing:.22em;
-      color:var(--gold-dark);
-      margin-bottom:4px;
-    }
+/* Title */
+.title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:54px;
+  letter-spacing:.15em;
+  margin-bottom:18px;
+}
 
-    .tagline{
-      font-size:16px;
-      letter-spacing:.35em;
-      color:var(--gold);
-      margin-bottom:24px;
-    }
+/* Text */
+.text{
+  font-size:20px;
+  color:var(--soft);
+  margin-bottom:14px;
+  line-height:1.6;
+}
 
-    /* TITLE */
-    .title{
-      font-family:"Cormorant Garamond", serif;
-      font-size:54px;
-      letter-spacing:.15em;
-      color:var(--gold-dark);
-      margin-bottom:16px;
-      line-height:1.05;
-    }
+/* Button */
+.join-btn{
+  display:inline-block;
+  margin:25px 0;
+  padding:16px 36px;
+  border-radius:10px;
+  background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.15em;
+  cursor:pointer;
+  transition:.2s ease;
+}
 
-    /* TEXT */
-    .text{
-      font-size:20px;
-      line-height:1.6;
-      color:var(--soft);
-      margin-bottom:10px;
-    }
+.join-btn:hover{
+  opacity:.9;
+  transform:translateY(-1px);
+}
 
-    /* NOTE */
-    .note{
-      font-size:18px;
-      color:var(--soft);
-      margin:18px 0 14px;
-    }
+/* Form hidden */
+.form-wrap{
+  max-width:500px;
+  margin:0 auto;
+  display:none;
+}
 
-    /* FORM */
-    .form{
-      width:100%;
-      max-width:500px;
-      margin:0 auto;
+.form{
+  display:flex;
+  border:1px solid var(--gold);
+  border-radius:9px;
+  overflow:hidden;
+  background:#fff;
+}
 
-      display:flex;
-      border:1px solid var(--gold);
-      border-radius:9px;
-      overflow:hidden;
-      background:#fff;
-    }
+.form input{
+  flex:1;
+  border:none;
+  padding:14px;
+  font-size:17px;
+}
 
-    .form input{
-      flex:1;
-      border:none;
-      outline:none;
-      padding:14px;
-      font-size:17px;
-      font-family:inherit;
-    }
+.form button{
+  border:none;
+  padding:14px 22px;
+  background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+  color:white;
+  font-weight:600;
+  letter-spacing:.15em;
+  cursor:pointer;
+}
 
-    .form button{
-      border:none;
-      padding:14px 22px;
+.small{
+  font-size:14px;
+  color:#8a8177;
+  margin-top:14px;
+}
 
-      background:linear-gradient(180deg,var(--gold),var(--gold-dark));
-      color:white;
+/* Mobile */
+@media(max-width:640px){
 
-      font-weight:600;
-      letter-spacing:.15em;
-      cursor:pointer;
+  .brand{font-size:36px;}
+  .title{font-size:40px;}
 
-      transition:.2s ease;
-    }
+  .form{flex-direction:column;}
+  .form button{width:100%;}
 
-    .form button:hover{
-      opacity:.9;
-      transform:translateY(-1px);
-    }
+}
 
-    .small{
-      font-size:14px;
-      color:#8a8177;
-      margin-top:14px;
-    }
-
-    /* BOTTOM IMAGE */
-    .bottom{
-      width:100%;
-      height:32vh;
-
-      background-image: url("bottom.png");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-
-    /* MOBILE */
-    @media(max-width:640px){
-
-      .logo{ width:95px; }
-
-      .brand{ font-size:34px; }
-
-      .title{ font-size:40px; }
-
-      .text{ font-size:18px; }
-
-      .form{
-        flex-direction:column;
-      }
-
-      .form button{
-        width:100%;
-      }
-
-      .bottom{
-        height:22vh;
-      }
-
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- TOP -->
-  <section class="top">
+<div class="main">
 
-    <div class="content">
+  <!-- Logo -->
+  <img src="IMG_2654.jpeg" class="logo">
 
-      <!-- LOGO -->
-      <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
+  <!-- Brand -->
+  <div class="brand">YALDAH ISSA</div>
+  <div class="tagline">INNER CIRCLE</div>
 
-      <!-- BRAND -->
-      <div class="brand">YALDAH ISSA</div>
-      <div class="tagline">INNER CIRCLE</div>
+  <!-- Title -->
+  <h1 class="title">PRIVATE ACCESS</h1>
 
-      <!-- HEADLINE -->
-      <h1 class="title">PRIVATE<br>ACCESS</h1>
+  <!-- Text -->
+  <p class="text">
+    Be the first to access exclusive collections,
+    private releases, and members-only offers.
+  </p>
 
-      <!-- MESSAGE -->
-      <p class="text">
-        Be the first to access exclusive collections,
-        private releases, and members-only offers.
-      </p>
+  <p class="text">
+    Created for women who lead with confidence,
+    elegance, and purpose.
+  </p>
 
-      <p class="text">
-        Created for women who lead with confidence,
-        elegance, and purpose.
-      </p>
+  <!-- Button -->
+  <a class="join-btn" onclick="openForm()">JOIN NOW</a>
 
-      <!-- NOTE -->
-      <p class="note">
-        Members receive early access and special pricing.
-      </p>
-<form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
-  <input type="hidden" name="_redirect" value="https://yaldahissa.com/thankyou.html">
+  <!-- Form -->
+  <div class="form-wrap" id="formBox">
 
-  <input
-    type="email"
-    name="email"
-    placeholder="Enter your email"
-    required
-  >
+    <form class="form"
+      action="https://formspree.io/f/mvzbgkbd"
+      method="POST">
 
-  <button type="submit">
-    JOIN NOW
-  </button>
-</form>
+      <input type="hidden" name="_redirect" value="https://yaldahissa.com/thankyou.html">
 
-  <input type="hidden" name="_redirect" value="https://yaldahissa.com/thankyou.html">
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      >
 
-      
+      <button type="submit">SUBMIT</button>
 
-      <p class="small">
-        ✨ Limited access • Invitation only
-      </p>
+    </form>
 
-    </div>
+    <p class="small">✨ Limited access • Invitation only</p>
 
-  </section>
+  </div>
 
-  <!-- BOTTOM IMAGE -->
-  <section class="bottom"></section>
+</div>
+
+<script>
+function openForm(){
+  document.getElementById("formBox").style.display="block";
+  document.querySelector(".join-btn").style.display="none";
+}
+</script>
 
 </body>
 </html>
+
 
 
 
