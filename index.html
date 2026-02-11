@@ -31,32 +31,34 @@
       color:var(--ink);
     }
 
-    /* Full screen background */
     body{
-      min-height:100vh;
       background: linear-gradient(180deg,var(--bg1),var(--bg2));
+    }
+
+    /* TOP SECTION */
+    .top{
+      min-height:100vh;
 
       display:flex;
       justify-content:center;
       align-items:center;
 
-      padding:40px 20px;
-    }
-
-    /* Main layout */
-    .page{
-      width:100%;
-      max-width:900px;
+      padding:70px 20px;
       text-align:center;
     }
 
-    /* Logo */
+    .content{
+      width:100%;
+      max-width:900px;
+    }
+
+    /* LOGO */
     .logo{
       width:140px;
       margin-bottom:26px;
     }
 
-    /* Brand */
+    /* BRAND */
     .brand{
       font-family:"Cormorant Garamond", serif;
       font-size:56px;
@@ -72,7 +74,7 @@
       margin-bottom:34px;
     }
 
-    /* Headline */
+    /* TITLE */
     .title{
       font-family:"Cormorant Garamond", serif;
       font-size:64px;
@@ -82,7 +84,7 @@
       line-height:1.05;
     }
 
-    /* Text */
+    /* TEXT */
     .text{
       font-size:22px;
       line-height:1.6;
@@ -90,13 +92,14 @@
       margin-bottom:14px;
     }
 
+    /* NOTE */
     .note{
       font-size:20px;
       color:var(--soft);
       margin:28px 0 18px;
     }
 
-    /* Form */
+    /* FORM */
     .form{
       width:100%;
       max-width:520px;
@@ -143,7 +146,32 @@
       margin-top:18px;
     }
 
-    /* Mobile */
+    /* BOTTOM IMAGE */
+    .bottom{
+      width:100%;
+      height:80vh;
+
+      background-image: url("bottom.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display:flex;
+      align-items:flex-end;
+    }
+
+    /* FADE */
+    .fade{
+      width:100%;
+      height:200px;
+      background: linear-gradient(
+        to bottom,
+        rgba(247,241,234,0),
+        rgba(247,241,234,1)
+      );
+    }
+
+    /* MOBILE */
     @media(max-width:640px){
 
       .logo{ width:110px; }
@@ -162,6 +190,10 @@
         width:100%;
       }
 
+      .bottom{
+        height:55vh;
+      }
+
     }
 
   </style>
@@ -169,59 +201,61 @@
 
 <body>
 
-  <main class="page">
+  <!-- TOP -->
+  <section class="top">
 
-    <!-- Logo -->
-    <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
+    <div class="content">
 
-    <!-- Brand -->
-    <div class="brand">YALDAH ISSA</div>
-    <div class="tagline">INNER CIRCLE</div>
+      <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
 
-    <!-- Headline -->
-    <h1 class="title">PRIVATE<br>ACCESS</h1>
+      <div class="brand">YALDAH ISSA</div>
+      <div class="tagline">INNER CIRCLE</div>
 
-    <!-- Message -->
-    <p class="text">
-      Be the first to access exclusive collections,
-      private releases, and members-only offers.
-    </p>
+      <h1 class="title">PRIVATE<br>ACCESS</h1>
 
-    <p class="text">
-      Created for women who lead with confidence,
-      elegance, and purpose.
-    </p>
+      <p class="text">
+        Be the first to access exclusive collections,
+        private releases, and members-only offers.
+      </p>
 
-    <!-- Note -->
-    <p class="note">
-      Members receive early access and special pricing.
-    </p>
+      <p class="text">
+        Created for women who lead with confidence,
+        elegance, and purpose.
+      </p>
 
-    <!-- Form -->
-    <form
-      class="form"
-      action="https://formspree.io/f/mvzbgkbd"
-      method="POST"
-    >
+      <p class="note">
+        Members receive early access and special pricing.
+      </p>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        required
+      <form
+        class="form"
+        action="https://formspree.io/f/mvzbgkbd"
+        method="POST"
       >
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        >
 
-      <button type="submit">
-        JOIN NOW
-      </button>
+        <button type="submit">
+          JOIN NOW
+        </button>
+      </form>
 
-    </form>
+      <p class="small">
+        ✨ Limited access • Invitation only
+      </p>
 
-    <p class="small">
-      ✨ Limited access • Invitation only
-    </p>
+    </div>
 
-  </main>
+  </section>
+
+  <!-- BOTTOM -->
+  <section class="bottom">
+    <div class="fade"></div>
+  </section>
 
 </body>
 </html>
