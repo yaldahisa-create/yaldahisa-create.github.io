@@ -19,26 +19,19 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{
-  height:100%;
-  font-family:"EB Garamond",serif;
-  color:var(--ink);
-}
+html,body{height:100%;font-family:"EB Garamond",serif;color:var(--ink);}
 
-/* Clean background */
 body{
   min-height:100vh;
   background:linear-gradient(180deg,var(--bg1),var(--bg2));
 }
 
-/* Layout */
 .page{
   min-height:100vh;
   display:flex;
   flex-direction:column;
 }
 
-/* TOP */
 .top{
   flex:1 0 auto;
   display:flex;
@@ -53,13 +46,8 @@ body{
   max-width:900px;
 }
 
-/* Logo */
-.logo{
-  width:120px;
-  margin-bottom:20px;
-}
+.logo{ width:120px; margin-bottom:20px; }
 
-/* Brand */
 .brand{
   font-family:"Cormorant Garamond",serif;
   font-size:46px;
@@ -75,7 +63,6 @@ body{
   margin-bottom:26px;
 }
 
-/* Title */
 .title{
   font-family:"Cormorant Garamond",serif;
   font-size:54px;
@@ -84,7 +71,6 @@ body{
   line-height:1.05;
 }
 
-/* Text */
 .text{
   font-size:20px;
   line-height:1.6;
@@ -92,7 +78,6 @@ body{
   margin-bottom:12px;
 }
 
-/* Join Button */
 .join-btn{
   display:inline-block;
   margin:22px 0 10px;
@@ -108,7 +93,6 @@ body{
 }
 .join-btn:hover{opacity:.9;transform:translateY(-1px);}
 
-/* Form hidden */
 .form-wrap{
   max-width:520px;
   margin:14px auto 0;
@@ -148,37 +132,37 @@ body{
   margin-top:12px;
 }
 
-/* Bottom image strip ONLY */
+.msg{
+  margin-top:10px;
+  font-size:14px;
+  color:#8a8177;
+}
+
+/* Bottom image strip */
 .bottom{
   width:100%;
   height:22vh;
-
   background-image:url("bottom.png");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
 }
 
-/* Mobile */
 @media(max-width:640px){
   .logo{width:95px;}
   .brand{font-size:34px;}
   .title{font-size:40px;}
   .text{font-size:18px;}
-
   .form{flex-direction:column;}
   .form button{width:100%;}
-
   .bottom{height:16vh;}
 }
 </style>
 </head>
 
 <body>
-
 <div class="page">
 
-  <!-- TOP -->
   <section class="top">
     <div class="content">
 
@@ -201,22 +185,20 @@ body{
 
       <a class="join-btn" onclick="openForm()">JOIN NOW</a>
 
+      <!-- IMPORTANT: this form does NOT navigate away anymore -->
       <div class="form-wrap" id="formBox">
-        <form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
-          <input type="hidden" name="_next" value="https://yaldahissa.com/thankyou.html">
-
-          <input type="email" name="email" placeholder="Enter your email" required>
-
-          <button type="submit">SUBMIT</button>
+        <form id="joinForm" class="form">
+          <input id="emailInput" type="email" name="email" placeholder="Enter your email" required>
+          <button id="submitBtn" type="submit">SUBMIT</button>
         </form>
 
+        <div id="statusMsg" class="msg"></div>
         <p class="small">✨ Limited access • Invitation only</p>
       </div>
 
     </div>
   </section>
 
-  <!-- BOTTOM IMAGE -->
   <section class="bottom"></section>
 
 </div>
@@ -225,11 +207,52 @@ body{
 function openForm(){
   document.getElementById("formBox").style.display="block";
   document.querySelector(".join-btn").style.display="none";
+  document.getElementById("emailInput").focus();
 }
+
+// ✅ Sends to Formspree in the background, then sends user to YOUR thank-you page
+document.getElementById("joinForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formspreeUrl = "https://formspree.io/f/mvzbgkbd";
+  const thankYouUrl = "https://yaldahissa.com/thankyou.html";
+
+  const btn = document.getElementById("submitBtn");
+  const msg = document.getElementById("statusMsg");
+  const email = document.getElementById("emailInput").value.trim();
+
+  if (!email) return;
+
+  btn.disabled = true;
+  msg.textContent = "Submitting…";
+
+  try{
+    const res = await fetch(formspreeUrl, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(document.getElementById("joinForm"))
+    });
+
+    // Even if Formspree responds weirdly, we still go to your thank you page
+    if (res.ok){
+      window.location.href = thankYouUrl;
+      return;
+    }
+
+    // If not ok, show message (no redirect)
+    msg.textContent = "Something went wrong. Please try again.";
+    btn.disabled = false;
+
+  }catch(err){
+    msg.textContent = "Network issue. Please try again.";
+    btn.disabled = false;
+  }
+});
 </script>
 
 </body>
 </html>
+
 
 
 
