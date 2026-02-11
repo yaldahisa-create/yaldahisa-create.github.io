@@ -10,7 +10,6 @@
 
   <style>
 
-    /* Reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,7 +21,7 @@
       font-family: "Cormorant Garamond", serif;
     }
 
-    /* Full screen background */
+    /* Background only */
     body {
       min-height: 100vh;
 
@@ -36,26 +35,22 @@
       align-items: center;
     }
 
-    /* Dark overlay */
+    /* Soft overlay */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.28);
       z-index: -1;
     }
 
-    /* Main container */
-    .container {
-      width: 100%;
-      max-width: 560px;
-      padding: 24px;
-    }
-
-    /* Glass card */
+    /* Card */
     .card {
-      background: rgba(255,255,255,0.9);
-      padding: 42px 28px;
+      background: rgba(255,255,255,0.92);
+      max-width: 520px;
+      width: 100%;
+
+      padding: 46px 30px;
       text-align: center;
 
       border-radius: 14px;
@@ -67,61 +62,59 @@
 
     /* Logo */
     .logo {
-      width: 120px;
-      margin-bottom: 12px;
+      width: 110px;
+      margin-bottom: 14px;
     }
 
     /* Brand */
     .brand {
-      font-size: 42px;
-      letter-spacing: 0.15em;
+      font-size: 40px;
+      letter-spacing: 0.18em;
       color: #8d6b45;
       margin-bottom: 6px;
     }
 
     .tagline {
       font-family: "Playfair Display", serif;
-      font-size: 22px;
-      letter-spacing: 0.2em;
+      font-size: 20px;
+      letter-spacing: 0.22em;
       color: #b08a5a;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     /* Text */
     .text {
       font-size: 19px;
       color: #4f463c;
-      margin-bottom: 10px;
-      line-height: 1.5;
+      margin-bottom: 12px;
+      line-height: 1.6;
     }
 
     .text.soft {
       color: rgba(79,70,60,0.75);
     }
 
-    /* Notes */
+    /* Note */
     .note {
       font-size: 17px;
       color: rgba(79,70,60,0.8);
-      margin: 14px 0 10px;
+      margin: 16px 0 12px;
     }
 
     .note.small {
       font-size: 15px;
       color: rgba(79,70,60,0.65);
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     /* Form */
     .form {
       display: flex;
-      margin: 12px 0 0;
+      margin: 14px 0 0;
 
       border: 1px solid #b08a5a;
       border-radius: 6px;
       overflow: hidden;
-
-      background: rgba(255,255,255,0.2);
     }
 
     .form input {
@@ -129,39 +122,34 @@
       padding: 14px;
       border: none;
       outline: none;
-
       font-size: 17px;
     }
 
     .form button {
       border: none;
-      padding: 14px 18px;
+      padding: 14px 20px;
 
       color: #fff;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
 
       cursor: pointer;
 
-      background: linear-gradient(
-        180deg,
-        #c59b63,
-        #8d6b45
-      );
+      background: linear-gradient(180deg,#c59b63,#8d6b45);
 
       transition: all .25s ease;
     }
 
     .form button:hover {
-      opacity: 0.92;
+      opacity: 0.9;
       transform: translateY(-1px);
     }
 
     /* Mobile */
-    @media (max-width: 520px) {
+    @media (max-width:520px) {
 
       .brand {
-        font-size: 34px;
+        font-size: 32px;
       }
 
       .form {
@@ -179,60 +167,55 @@
 
 <body>
 
-  <main class="container">
+  <section class="card">
 
-    <section class="card">
+    <!-- Logo -->
+    <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
 
-      <!-- Logo -->
-      <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
+    <!-- Brand -->
+    <h1 class="brand">YALDAH ISSA</h1>
+    <p class="tagline">INNER CIRCLE</p>
 
-      <!-- Brand -->
-      <h1 class="brand">YALDAH ISSA</h1>
-      <p class="tagline">INNER CIRCLE</p>
+    <!-- Message -->
+    <p class="text">
+      Be the first to access exclusive collections,
+      private sales, and limited releases.
+    </p>
 
-      <!-- Message -->
-      <p class="text">
-        Be the first to access exclusive collections,
-        private sales, and limited releases.
-      </p>
+    <p class="text soft">
+      For women who lead with purpose and grace.
+    </p>
 
-      <p class="text soft">
-        For women who lead with purpose and grace.
-      </p>
+    <!-- Note -->
+    <p class="note">
+      Members receive early access and special pricing.
+    </p>
 
-      <!-- Note -->
-      <p class="note">
-        Members receive early access and special pricing.
-      </p>
+    <!-- Form -->
+    <form
+      class="form"
+      action="https://formspree.io/f/mvzbgkbd"
+      method="POST"
+    >
 
-      <!-- Join Form -->
-      <form
-        class="form"
-        action="https://formspree.io/f/mvzbgkbd"
-        method="POST"
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
       >
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          required
-          autocomplete="email"
-        >
+      <button type="submit">
+        JOIN THE CIRCLE
+      </button>
 
-        <button type="submit">
-          JOIN THE CIRCLE
-        </button>
+    </form>
 
-      </form>
+    <p class="note small">
+      ✨ Limited access • Members only
+    </p>
 
-      <p class="note small">
-        ✨ Limited access • Members only
-      </p>
-
-    </section>
-
-  </main>
+  </section>
 
 </body>
 </html>
