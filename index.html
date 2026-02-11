@@ -12,28 +12,26 @@
 :root{
   --gold:#b08a5a;
   --gold-dark:#8d6b45;
+  --ink:#2f261f;
+  --soft:#6f655b;
+  --bg1:#f7f1ea;
+  --bg2:#eadfce;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;font-family:"EB Garamond",serif;}
+html,body{
+  height:100%;
+  font-family:"EB Garamond",serif;
+  color:var(--ink);
+}
 
+/* Clean background */
 body{
   min-height:100vh;
-  background-image:url("hero.png");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
 }
 
-/* overlay for readability */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.40);
-  z-index:-1;
-}
-
+/* Layout */
 .page{
   min-height:100vh;
   display:flex;
@@ -42,56 +40,59 @@ body::before{
 
 /* TOP */
 .top{
-  flex: 1 0 auto;
+  flex:1 0 auto;
   display:flex;
-  align-items:center;
   justify-content:center;
-  padding:48px 20px;
+  align-items:center;
+  padding:50px 20px;
   text-align:center;
 }
 
 .content{
   width:100%;
   max-width:900px;
-  color:rgba(255,255,255,0.95);
 }
 
+/* Logo */
 .logo{
   width:120px;
-  margin-bottom:18px;
-  filter:drop-shadow(0 12px 22px rgba(0,0,0,.25));
+  margin-bottom:20px;
 }
 
+/* Brand */
 .brand{
   font-family:"Cormorant Garamond",serif;
   font-size:46px;
   letter-spacing:.22em;
+  color:var(--gold-dark);
   margin-bottom:6px;
 }
 
 .tagline{
-  font-size:15px;
+  font-size:16px;
   letter-spacing:.35em;
-  opacity:.85;
-  margin-bottom:22px;
+  color:var(--gold);
+  margin-bottom:26px;
 }
 
+/* Title */
 .title{
   font-family:"Cormorant Garamond",serif;
   font-size:54px;
   letter-spacing:.15em;
-  margin-bottom:14px;
+  margin-bottom:18px;
   line-height:1.05;
 }
 
+/* Text */
 .text{
   font-size:20px;
   line-height:1.6;
-  opacity:.9;
-  margin-bottom:10px;
+  color:var(--soft);
+  margin-bottom:12px;
 }
 
-/* JOIN BUTTON */
+/* Join Button */
 .join-btn{
   display:inline-block;
   margin:22px 0 10px;
@@ -107,7 +108,7 @@ body::before{
 }
 .join-btn:hover{opacity:.9;transform:translateY(-1px);}
 
-/* FORM hidden until click */
+/* Form hidden */
 .form-wrap{
   max-width:520px;
   margin:14px auto 0;
@@ -116,10 +117,10 @@ body::before{
 
 .form{
   display:flex;
-  border:1px solid rgba(255,255,255,0.35);
+  border:1px solid var(--gold);
   border-radius:10px;
   overflow:hidden;
-  background:rgba(255,255,255,0.92);
+  background:#fff;
 }
 
 .form input{
@@ -129,7 +130,6 @@ body::before{
   padding:14px;
   font-size:17px;
   font-family:inherit;
-  color:#2f261f;
 }
 
 .form button{
@@ -144,13 +144,12 @@ body::before{
 
 .small{
   font-size:14px;
-  opacity:.85;
+  color:#8a8177;
   margin-top:12px;
 }
 
-/* ✅ BOTTOM IMAGE STRIP (THIS IS THE PART YOU WANT BACK) */
+/* Bottom image strip ONLY */
 .bottom{
-  flex: 0 0 auto;
   width:100%;
   height:22vh;
 
@@ -160,15 +159,7 @@ body::before{
   background-repeat:no-repeat;
 }
 
-/* optional fade at top of bottom image so it blends */
-.bottom::before{
-  content:"";
-  display:block;
-  height:70px;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0));
-}
-
-/* MOBILE */
+/* Mobile */
 @media(max-width:640px){
   .logo{width:95px;}
   .brand{font-size:34px;}
@@ -178,58 +169,68 @@ body::before{
   .form{flex-direction:column;}
   .form button{width:100%;}
 
-  .bottom{height:18vh;}
+  .bottom{height:16vh;}
 }
 </style>
 </head>
 
 <body>
-  <div class="page">
 
-    <section class="top">
-      <div class="content">
+<div class="page">
 
-        <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
+  <!-- TOP -->
+  <section class="top">
+    <div class="content">
 
-        <div class="brand">YALDAH ISSA</div>
-        <div class="tagline">INNER CIRCLE</div>
+      <img src="IMG_2654.jpeg" class="logo" alt="Yaldah Issa Logo">
 
-        <h1 class="title">PRIVATE<br>ACCESS</h1>
+      <div class="brand">YALDAH ISSA</div>
+      <div class="tagline">INNER CIRCLE</div>
 
-        <p class="text">Be the first to access exclusive collections, private releases, and members-only offers.</p>
-        <p class="text">Created for women who lead with confidence, elegance, and purpose.</p>
+      <h1 class="title">PRIVATE<br>ACCESS</h1>
 
-        <a class="join-btn" onclick="openForm()">JOIN NOW</a>
+      <p class="text">
+        Be the first to access exclusive collections,
+        private releases, and members-only offers.
+      </p>
 
-        <div class="form-wrap" id="formBox">
-          <form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
-            <input type="hidden" name="_next" value="https://yaldahissa.com/thankyou.html">
+      <p class="text">
+        Created for women who lead with confidence,
+        elegance, and purpose.
+      </p>
 
-            <input type="email" name="email" placeholder="Enter your email" required>
+      <a class="join-btn" onclick="openForm()">JOIN NOW</a>
 
-            <button type="submit">SUBMIT</button>
-          </form>
+      <div class="form-wrap" id="formBox">
+        <form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
+          <input type="hidden" name="_next" value="https://yaldahissa.com/thankyou.html">
 
-          <p class="small">✨ Limited access • Invitation only</p>
-        </div>
+          <input type="email" name="email" placeholder="Enter your email" required>
 
+          <button type="submit">SUBMIT</button>
+        </form>
+
+        <p class="small">✨ Limited access • Invitation only</p>
       </div>
-    </section>
 
-    <!-- ✅ this line must exist or the bottom image won't show -->
-    <section class="bottom"></section>
+    </div>
+  </section>
 
-  </div>
+  <!-- BOTTOM IMAGE -->
+  <section class="bottom"></section>
+
+</div>
 
 <script>
 function openForm(){
-  document.getElementById("formBox").style.display = "block";
-  document.querySelector(".join-btn").style.display = "none";
+  document.getElementById("formBox").style.display="block";
+  document.querySelector(".join-btn").style.display="none";
 }
 </script>
 
 </body>
 </html>
+
 
 
 
