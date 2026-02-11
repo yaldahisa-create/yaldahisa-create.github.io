@@ -37,13 +37,13 @@
 
     /* TOP SECTION */
     .top{
-      min-height:100vh;
+      min-height:65vh;
 
       display:flex;
       justify-content:center;
       align-items:center;
 
-      padding:70px 20px;
+      padding:60px 20px;
       text-align:center;
     }
 
@@ -54,49 +54,49 @@
 
     /* LOGO */
     .logo{
-      width:140px;
-      margin-bottom:26px;
+      width:130px;
+      margin-bottom:22px;
     }
 
     /* BRAND */
     .brand{
       font-family:"Cormorant Garamond", serif;
-      font-size:56px;
+      font-size:52px;
       letter-spacing:.22em;
       color:var(--gold-dark);
-      margin-bottom:8px;
+      margin-bottom:6px;
     }
 
     .tagline{
-      font-size:18px;
+      font-size:17px;
       letter-spacing:.35em;
       color:var(--gold);
-      margin-bottom:34px;
+      margin-bottom:28px;
     }
 
     /* TITLE */
     .title{
       font-family:"Cormorant Garamond", serif;
-      font-size:64px;
+      font-size:60px;
       letter-spacing:.15em;
       color:var(--gold-dark);
-      margin-bottom:22px;
+      margin-bottom:20px;
       line-height:1.05;
     }
 
     /* TEXT */
     .text{
-      font-size:22px;
+      font-size:21px;
       line-height:1.6;
       color:var(--soft);
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     /* NOTE */
     .note{
-      font-size:20px;
+      font-size:19px;
       color:var(--soft);
-      margin:28px 0 18px;
+      margin:22px 0 16px;
     }
 
     /* FORM */
@@ -116,14 +116,14 @@
       flex:1;
       border:none;
       outline:none;
-      padding:18px;
+      padding:16px;
       font-size:18px;
       font-family:inherit;
     }
 
     .form button{
       border:none;
-      padding:18px 26px;
+      padding:16px 24px;
 
       background:linear-gradient(180deg,var(--gold),var(--gold-dark));
       color:white;
@@ -141,15 +141,15 @@
     }
 
     .small{
-      font-size:16px;
+      font-size:15px;
       color:#8a8177;
-      margin-top:18px;
+      margin-top:16px;
     }
 
     /* BOTTOM IMAGE */
     .bottom{
       width:100%;
-      height:80vh;
+      height:35vh;
 
       background-image: url("bottom.png");
       background-size: cover;
@@ -163,7 +163,7 @@
     /* FADE */
     .fade{
       width:100%;
-      height:200px;
+      height:120px;
       background: linear-gradient(
         to bottom,
         rgba(247,241,234,0),
@@ -174,13 +174,13 @@
     /* MOBILE */
     @media(max-width:640px){
 
-      .logo{ width:110px; }
+      .logo{ width:105px; }
 
-      .brand{ font-size:40px; }
+      .brand{ font-size:38px; }
 
-      .title{ font-size:44px; }
+      .title{ font-size:42px; }
 
-      .text{ font-size:19px; }
+      .text{ font-size:18px; }
 
       .form{
         flex-direction:column;
@@ -191,7 +191,7 @@
       }
 
       .bottom{
-        height:55vh;
+        height:25vh;
       }
 
     }
@@ -206,13 +206,17 @@
 
     <div class="content">
 
+      <!-- Logo -->
       <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
 
+      <!-- Brand -->
       <div class="brand">YALDAH ISSA</div>
       <div class="tagline">INNER CIRCLE</div>
 
+      <!-- Headline -->
       <h1 class="title">PRIVATE<br>ACCESS</h1>
 
+      <!-- Message -->
       <p class="text">
         Be the first to access exclusive collections,
         private releases, and members-only offers.
@@ -223,10 +227,12 @@
         elegance, and purpose.
       </p>
 
+      <!-- Note -->
       <p class="note">
         Members receive early access and special pricing.
       </p>
 
+      <!-- Form -->
       <form
         class="form"
         action="https://formspree.io/f/mvzbgkbd"
@@ -252,7 +258,7 @@
 
   </section>
 
-  <!-- BOTTOM -->
+  <!-- BOTTOM IMAGE -->
   <section class="bottom">
     <div class="fade"></div>
   </section>
