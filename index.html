@@ -3,120 +3,240 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Yaldah Issa | Inner Circle</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
-    *{ box-sizing:border-box; margin:0; padding:0; }
-    html,body{ height:100%; font-family:"Cormorant Garamond", serif; }
 
-    body{
-      min-height:100vh;
-      background-image: url(background-image: url("hero.png");
-);
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    /* Full screen background */
+    body {
+      min-height: 100vh;
+
+      background-image: url("hero.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
       background: rgba(0,0,0,0.25);
-      z-index:-1;
+      z-index: -1;
     }
 
-    .container{ width:100%; max-width:560px; padding:24px; }
+    /* Main container */
+    .container {
+      width: 100%;
+      max-width: 560px;
+      padding: 24px;
+    }
 
-    .card{
-      background: rgba(255,255,255,0.88);
+    /* Glass card */
+    .card {
+      background: rgba(255,255,255,0.9);
       padding: 42px 28px;
-      text-align:center;
+      text-align: center;
+
       border-radius: 14px;
-      border: 1px solid rgba(176,138,90,0.30);
+      border: 1px solid rgba(176,138,90,0.3);
+
       box-shadow: 0 25px 70px rgba(0,0,0,0.15);
       backdrop-filter: blur(4px);
     }
 
-    .logo{ width:120px; margin-bottom:12px; }
-    .brand{
-      font-size:42px; letter-spacing:0.15em;
-      color:#8d6b45; margin-bottom:6px;
-    }
-    .tagline{
-      font-family:"Playfair Display", serif;
-      font-size:22px; letter-spacing:0.2em;
-      color:#b08a5a; margin-bottom:18px;
+    /* Logo */
+    .logo {
+      width: 120px;
+      margin-bottom: 12px;
     }
 
-    .text{ font-size:19px; color:#4f463c; margin-bottom:10px; line-height:1.5; }
-    .text.soft{ color: rgba(79,70,60,0.75); }
+    /* Brand */
+    .brand {
+      font-size: 42px;
+      letter-spacing: 0.15em;
+      color: #8d6b45;
+      margin-bottom: 6px;
+    }
 
-    .note{ font-size:17px; color: rgba(79,70,60,0.80); margin: 14px 0 10px; }
-    .note.small{ font-size:15px; color: rgba(79,70,60,0.65); margin-top: 12px; }
+    .tagline {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing: 0.2em;
+      color: #b08a5a;
+      margin-bottom: 18px;
+    }
 
-    .form{
-      display:flex;
+    /* Text */
+    .text {
+      font-size: 19px;
+      color: #4f463c;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .text.soft {
+      color: rgba(79,70,60,0.75);
+    }
+
+    /* Notes */
+    .note {
+      font-size: 17px;
+      color: rgba(79,70,60,0.8);
+      margin: 14px 0 10px;
+    }
+
+    .note.small {
+      font-size: 15px;
+      color: rgba(79,70,60,0.65);
+      margin-top: 12px;
+    }
+
+    /* Form */
+    .form {
+      display: flex;
       margin: 12px 0 0;
-      border:1px solid #b08a5a;
-      border-radius:6px;
-      overflow:hidden;
-      background: rgba(255,255,255,0.20);
+
+      border: 1px solid #b08a5a;
+      border-radius: 6px;
+      overflow: hidden;
+
+      background: rgba(255,255,255,0.2);
     }
-    .form input{
-      flex:1; padding:14px;
-      border:none; outline:none;
-      font-size:17px;
+
+    .form input {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      outline: none;
+
+      font-size: 17px;
     }
-    .form button{
-      border:none;
-      padding:14px 18px;
-      color:#fff;
-      font-weight:600;
-      letter-spacing:0.12em;
-      cursor:pointer;
-      background: linear-gradient(180deg,#c59b63,#8d6b45);
+
+    .form button {
+      border: none;
+      padding: 14px 18px;
+
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+
+      cursor: pointer;
+
+      background: linear-gradient(
+        180deg,
+        #c59b63,
+        #8d6b45
+      );
+
       transition: all .25s ease;
     }
-    .form button:hover{ opacity:.92; transform: translateY(-1px); }
 
-    @media (max-width:520px){
-      .brand{ font-size:34px; }
-      .form{ flex-direction:column; }
-      .form button{ width:100%; }
+    .form button:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
     }
+
+    /* Mobile */
+    @media (max-width: 520px) {
+
+      .brand {
+        font-size: 34px;
+      }
+
+      .form {
+        flex-direction: column;
+      }
+
+      .form button {
+        width: 100%;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
+
   <main class="container">
+
     <section class="card">
+
+      <!-- Logo -->
       <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
 
+      <!-- Brand -->
       <h1 class="brand">YALDAH ISSA</h1>
       <p class="tagline">INNER CIRCLE</p>
 
-      <p class="text">Be the first to access exclusive collections, private sales, and limited releases.</p>
-      <p class="text soft">For women who lead with purpose and grace.</p>
+      <!-- Message -->
+      <p class="text">
+        Be the first to access exclusive collections,
+        private sales, and limited releases.
+      </p>
 
-      <p class="note">Members receive early access and special pricing.</p>
+      <p class="text soft">
+        For women who lead with purpose and grace.
+      </p>
 
-      <!-- JOIN NOW bar after the note -->
-      <form class="form" action="https://formspree.io/f/mvzbgkbd" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required autocomplete="email" />
-        <button type="submit">JOIN THE CIRCLE</button>
+      <!-- Note -->
+      <p class="note">
+        Members receive early access and special pricing.
+      </p>
+
+      <!-- Join Form -->
+      <form
+        class="form"
+        action="https://formspree.io/f/mvzbgkbd"
+        method="POST"
+      >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          autocomplete="email"
+        >
+
+        <button type="submit">
+          JOIN THE CIRCLE
+        </button>
+
       </form>
 
-      <p class="note small">✨ Limited access • Members only</p>
+      <p class="note small">
+        ✨ Limited access • Members only
+      </p>
+
     </section>
+
   </main>
+
 </body>
 </html>
+
 
 
 
