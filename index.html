@@ -21,7 +21,7 @@
       font-family: "Cormorant Garamond", serif;
     }
 
-    /* Background only */
+    /* Background image */
     body {
       min-height: 100vh;
 
@@ -33,37 +33,38 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 24px;
     }
 
-    /* Soft overlay */
+    /* Dark overlay for readability */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.28);
+      background: rgba(0,0,0,0.35);
       z-index: -1;
     }
 
-    /* Card */
-    .card {
+    /* Main content box */
+    .box {
       background: rgba(255,255,255,0.92);
-      max-width: 520px;
+      max-width: 560px;
       width: 100%;
 
-      padding: 46px 30px;
+      padding: 48px 32px;
       text-align: center;
 
       border-radius: 14px;
       border: 1px solid rgba(176,138,90,0.3);
 
-      box-shadow: 0 25px 70px rgba(0,0,0,0.15);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.2);
       backdrop-filter: blur(4px);
     }
 
     /* Logo */
     .logo {
       width: 110px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     /* Brand */
@@ -79,7 +80,7 @@
       font-size: 20px;
       letter-spacing: 0.22em;
       color: #b08a5a;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     /* Text */
@@ -90,7 +91,7 @@
       line-height: 1.6;
     }
 
-    .text.soft {
+    .soft {
       color: rgba(79,70,60,0.75);
     }
 
@@ -98,23 +99,18 @@
     .note {
       font-size: 17px;
       color: rgba(79,70,60,0.8);
-      margin: 16px 0 12px;
-    }
-
-    .note.small {
-      font-size: 15px;
-      color: rgba(79,70,60,0.65);
-      margin-top: 14px;
+      margin: 18px 0 14px;
     }
 
     /* Form */
     .form {
       display: flex;
-      margin: 14px 0 0;
 
       border: 1px solid #b08a5a;
       border-radius: 6px;
       overflow: hidden;
+
+      background: rgba(255,255,255,0.25);
     }
 
     .form input {
@@ -127,17 +123,16 @@
 
     .form button {
       border: none;
-      padding: 14px 20px;
+      padding: 14px 22px;
 
-      color: #fff;
+      background: linear-gradient(180deg,#c59b63,#8d6b45);
+      color: white;
+
       font-weight: 600;
       letter-spacing: 0.14em;
 
       cursor: pointer;
-
-      background: linear-gradient(180deg,#c59b63,#8d6b45);
-
-      transition: all .25s ease;
+      transition: 0.25s ease;
     }
 
     .form button:hover {
@@ -145,8 +140,14 @@
       transform: translateY(-1px);
     }
 
+    .small {
+      font-size: 15px;
+      color: rgba(79,70,60,0.65);
+      margin-top: 14px;
+    }
+
     /* Mobile */
-    @media (max-width:520px) {
+    @media (max-width:520px){
 
       .brand {
         font-size: 32px;
@@ -167,16 +168,15 @@
 
 <body>
 
-  <section class="card">
+  <section class="box">
 
     <!-- Logo -->
-    <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
+    <img src="IMG_2654.jpeg" class="logo" alt="Yaldah Issa Logo">
 
-    <!-- Brand -->
+    <!-- Text -->
     <h1 class="brand">YALDAH ISSA</h1>
     <p class="tagline">INNER CIRCLE</p>
 
-    <!-- Message -->
     <p class="text">
       Be the first to access exclusive collections,
       private sales, and limited releases.
@@ -186,12 +186,11 @@
       For women who lead with purpose and grace.
     </p>
 
-    <!-- Note -->
     <p class="note">
       Members receive early access and special pricing.
     </p>
 
-    <!-- Form -->
+    <!-- Form AFTER text -->
     <form
       class="form"
       action="https://formspree.io/f/mvzbgkbd"
@@ -211,7 +210,7 @@
 
     </form>
 
-    <p class="note small">
+    <p class="small">
       ✨ Limited access • Members only
     </p>
 
@@ -219,6 +218,7 @@
 
 </body>
 </html>
+
 
 
 
