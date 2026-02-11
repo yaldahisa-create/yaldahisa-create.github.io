@@ -9,7 +9,7 @@ html, body {
   font-family: "Cormorant Garamond", serif;
 }
 
-/* Full screen background */
+/* Full background */
 body {
   min-height: 100vh;
 
@@ -23,7 +23,7 @@ body {
   align-items: center;
 }
 
-/* Dark soft overlay */
+/* Dark overlay */
 body::before {
   content: "";
   position: fixed;
@@ -32,14 +32,14 @@ body::before {
   z-index: -1;
 }
 
-/* Center content */
+/* Container */
 .container {
   width: 100%;
   max-width: 520px;
   padding: 24px;
 }
 
-/* Glass card */
+/* Card */
 .card {
   background: rgba(255,255,255,0.88);
   padding: 42px 28px;
@@ -85,10 +85,22 @@ body::before {
   color: rgba(79,70,60,0.75);
 }
 
+/* Note */
+.note {
+  font-size: 17px;
+  color: rgba(79,70,60,0.8);
+  margin: 14px 0 10px;
+}
+
+.note.small {
+  font-size: 15px;
+  color: rgba(79,70,60,0.65);
+}
+
 /* Form */
 .form {
   display: flex;
-  margin: 24px 0 14px;
+  margin: 12px 0 14px;
   border: 1px solid #b08a5a;
   border-radius: 6px;
   overflow: hidden;
@@ -125,12 +137,6 @@ body::before {
   transform: translateY(-1px);
 }
 
-/* Note */
-.note {
-  font-size: 16px;
-  color: rgba(79,70,60,0.7);
-}
-
 /* Mobile */
 @media (max-width: 520px) {
 
@@ -147,6 +153,7 @@ body::before {
   }
 
 }
+
 
 
 
