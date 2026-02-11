@@ -13,11 +13,10 @@
     :root{
       --gold:#b08a5a;
       --gold-dark:#8d6b45;
-      --ink:#3a2f27;
+      --ink:#2f261f;
       --soft:#6f655b;
-      --bg1:#f6efe7;
-      --bg2:#efe4d6;
-      --card:#ffffff;
+      --bg1:#f7f1ea;
+      --bg2:#eadfce;
     }
 
     *{
@@ -32,106 +31,102 @@
       color:var(--ink);
     }
 
-    /* Page background */
+    /* Full screen background */
     body{
       min-height:100vh;
       background: linear-gradient(180deg,var(--bg1),var(--bg2));
+
       display:flex;
       justify-content:center;
       align-items:center;
-      padding:24px;
+
+      padding:40px 20px;
     }
 
-    /* Main box */
-    .card{
-      width:min(560px,100%);
-      background:var(--card);
-      padding:50px 34px;
+    /* Main layout */
+    .page{
+      width:100%;
+      max-width:900px;
       text-align:center;
-
-      border-radius:18px;
-      border:1px solid rgba(176,138,90,.25);
-
-      box-shadow:0 22px 60px rgba(0,0,0,.12);
     }
 
     /* Logo */
     .logo{
-      width:110px;
-      margin-bottom:18px;
+      width:140px;
+      margin-bottom:26px;
     }
 
     /* Brand */
     .brand{
       font-family:"Cormorant Garamond", serif;
-      font-size:42px;
-      letter-spacing:.18em;
+      font-size:56px;
+      letter-spacing:.22em;
       color:var(--gold-dark);
-      margin-bottom:6px;
+      margin-bottom:8px;
     }
 
     .tagline{
-      font-size:17px;
-      letter-spacing:.28em;
+      font-size:18px;
+      letter-spacing:.35em;
       color:var(--gold);
-      margin-bottom:22px;
+      margin-bottom:34px;
     }
 
-    /* Title */
+    /* Headline */
     .title{
       font-family:"Cormorant Garamond", serif;
-      font-size:44px;
-      letter-spacing:.14em;
+      font-size:64px;
+      letter-spacing:.15em;
       color:var(--gold-dark);
-      margin-bottom:18px;
+      margin-bottom:22px;
       line-height:1.05;
     }
 
     /* Text */
     .text{
-      font-size:19px;
+      font-size:22px;
       line-height:1.6;
       color:var(--soft);
       margin-bottom:14px;
     }
 
     .note{
-      font-size:17px;
+      font-size:20px;
       color:var(--soft);
-      margin:20px 0 16px;
+      margin:28px 0 18px;
     }
 
     /* Form */
     .form{
+      width:100%;
+      max-width:520px;
+      margin:0 auto;
+
       display:flex;
       border:1px solid var(--gold);
-      border-radius:8px;
+      border-radius:10px;
       overflow:hidden;
-      margin-top:6px;
+      background:#fff;
     }
 
     .form input{
       flex:1;
       border:none;
       outline:none;
-      padding:15px 16px;
-      font-size:17px;
+      padding:18px;
+      font-size:18px;
       font-family:inherit;
-    }
-
-    .form input::placeholder{
-      color:#9a9086;
     }
 
     .form button{
       border:none;
-      padding:15px 20px;
+      padding:18px 26px;
 
       background:linear-gradient(180deg,var(--gold),var(--gold-dark));
       color:white;
 
       font-weight:600;
-      letter-spacing:.14em;
+      letter-spacing:.16em;
       cursor:pointer;
 
       transition:.2s ease;
@@ -143,16 +138,21 @@
     }
 
     .small{
-      font-size:14px;
+      font-size:16px;
       color:#8a8177;
-      margin-top:14px;
+      margin-top:18px;
     }
 
     /* Mobile */
-    @media(max-width:520px){
+    @media(max-width:640px){
 
-      .brand{ font-size:34px; }
-      .title{ font-size:36px; }
+      .logo{ width:110px; }
+
+      .brand{ font-size:40px; }
+
+      .title{ font-size:44px; }
+
+      .text{ font-size:19px; }
 
       .form{
         flex-direction:column;
@@ -169,17 +169,17 @@
 
 <body>
 
-  <section class="card">
+  <main class="page">
 
-    <!-- LOGO -->
+    <!-- Logo -->
     <img src="IMG_2654.jpeg" alt="Yaldah Issa Logo" class="logo">
 
     <!-- Brand -->
     <div class="brand">YALDAH ISSA</div>
     <div class="tagline">INNER CIRCLE</div>
 
-    <!-- Title -->
-    <h1 class="title">JOIN OUR<br>PRIVATE LIST</h1>
+    <!-- Headline -->
+    <h1 class="title">PRIVATE<br>ACCESS</h1>
 
     <!-- Message -->
     <p class="text">
@@ -188,8 +188,8 @@
     </p>
 
     <p class="text">
-      Created for women who lead with
-      confidence, elegance, and purpose.
+      Created for women who lead with confidence,
+      elegance, and purpose.
     </p>
 
     <!-- Note -->
@@ -221,7 +221,7 @@
       ✨ Limited access • Invitation only
     </p>
 
-  </section>
+  </main>
 
 </body>
 </html>
